@@ -9,55 +9,94 @@
 /* inline 은 실지렁이 같은 공백(margin이 아닌 다른 space 개념)이 쪼금씩 있다 inline 끼리 붙지않게 공백값이 기본적으로 있는데 , 이걸 한번에 해결하는 방법은 부모와 자식에게 block 값을 줘서 요소가 차지하는 컨텐츠 자체를 모두 꽉 채우면 된다.
 (cf. a와 img 가 형제였다면 한 단락씩 가져갔을 것)  */
 
-#mainBanner .swiper-slide a {
-    /* display: block; */
+#lotteBanner .swiper-slide a {
+    display: block;
 }
 
-#mainBanner .swiper-slide img {
+#lotteBanner .swiper-slide img {
     max-width: 100%;
-    /* display: block; */
+    display: block;
 
 }
 
-#mainBanner .btns * {
+#lotteBanner .btns * {
     position: unset !important;
-    color: white;
+    /* color: white; */
+    background-color: transparent;
 
 }
 
-#mainBanner .btns {
-    background-color: rgba(0, 0, 0, .3);
-    display: inline-flex;
+.toggle {
+    background-color: transparent;
+
+}
+
+
+
+
+#lotteBanner .btns {
+    /* background-color: rgba(0, 0, 0, .3); */
+    display: flex;
+    /* justify-content: end; */
     padding: 0.5rem 2rem;
     border-radius: 1rem;
     margin-top: 1rem;
 }
 
 
-#mainBanner .btns ::after {
-    font-size: 1rem;
+#lotteBanner ::after {
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border: 0.1px solid #ccc;
+    border-radius: 15%;
 }
 
-
-#mainBanner .btns .swiper-button-next,
-#mainBanner .btns .swiper-button-prev {
+.swiper #lotteBanner .btns .swiper-button-next,
+#lotteBanner .btns .swiper-button-prev {
     width: auto;
     height: auto;
     margin: 0 11px;
-
 }
 
 /* 꺽쇠 없애주세욧! script 만지지말고 쿼리로 만지기. CSS로 가자  */
 @media (max-width : 768px) {
 
-    #mainBanner .btns .swiper-button-next,
-    #mainBanner .btns .swiper-button-prev {
+    #lotteBanner .btns .swiper-button-next,
+    #lotteBanner .btns .swiper-button-prev {
         display: none !important;
     }
 }
 
 /* margin 0 auto 넣고싶으면 요소의 부모 옆구리(width)가 있어야지! 옆구리가 없는게 마진이 어떻게 있어 (=width값이 있어야지만 컴퓨터가 보낼수 있어요)
 없으니까 부모한테 text-algin center  */
-#mainBanner {
-    text-align: center;
+#lotteBanner {
+    /* text-align: center; */
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+
+}
+
+.rel {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.btns .swiper-pagination {
+    font-size: 0;
+}
+
+.btns .swiper-pagination span {
+    font-size: 14px;
+    padding: 0 5px;
 }
